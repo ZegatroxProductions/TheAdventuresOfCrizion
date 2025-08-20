@@ -1,0 +1,265 @@
+/*—— Vars & Reset ——*/
+:root {
+  --gradient: linear-gradient(120deg, #e63946, #2a9d8f);
+  --card-bg: rgba(0, 0, 0, 0.75);
+  --modal-bg: rgba(0, 0, 0, 0.85);
+  --accent: #f4a261;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--gradient);
+  color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*—— Header & Nav ——*/
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links button {
+  position: relative;
+  background: transparent;
+  border: 2px solid var(--accent);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-links button::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.nav-links button:hover,
+.nav-links button.active {
+  background: var(--accent);
+  color: #000;
+}
+
+.nav-links button:hover::after,
+.nav-links button.active::after {
+  transform: scaleX(1);
+}
+
+/*—— Main & Sections ——*/
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+/*—— Character Cards ——*/
+#characters .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/*—— Modal ——*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  padding: 1.5rem;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s;
+}
+
+.modal.open .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/*—— Ebook List ——*/
+#ebooks .ebook-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+#ebooks li {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#ebooks h4 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.read-btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: var(--accent);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/*—— Story Section ——*/
+#story .page {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  line-height: 1.6;
+  position: relative;
+  overflow: hidden;
+}
+
+#story h1 {
+  margin-bottom: 0.75rem;
+}
+
+.pager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.pager button {
+  background: var(--accent);
+  border: none;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*—— Responsive ——*/
+@media (max-width: 600px) {
+  nav .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+}
