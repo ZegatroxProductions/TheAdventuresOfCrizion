@@ -1,31 +1,3 @@
-/*—— Vars & Reset ——*/
-:root {
-  --gradient: linear-gradient(120deg, #e63946, #2a9d8f);
-  --card-bg: rgba(0, 0, 0, 0.75);
-  --modal-bg: rgba(0, 0, 0, 0.85);
-  --accent: #f4a261;
-  --white: #fff;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--gradient);
-  color: var(--white);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 /*—— Header & Nav ——*/
 header {
   position: sticky;
@@ -37,31 +9,31 @@ header {
 nav {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 800;
-  flex: 1 1 100%;
-  text-align: center;
-  margin-bottom: 0.5rem;
+  flex: 1 1 auto;
 }
 
+/* Nav buttons container */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 0.5rem;
-  width: 100%;
+  justify-content: flex-end;
+  flex: 1 1 auto;
 }
 
-/* Navigation buttons */
+/* Buttons themselves */
 .nav-links button {
+  position: relative;
   background: transparent;
   border: 2px solid var(--accent);
   color: var(--white);
@@ -70,7 +42,8 @@ nav {
   cursor: pointer;
   transition: background 0.3s, color 0.3s;
   border-radius: 4px;
-  flex: 1 1 120px;
+  min-width: 100px;
+  flex: 1 1 100px;
   text-align: center;
 }
 
@@ -98,21 +71,27 @@ nav {
   transform: scaleX(1);
 }
 
-/*—— Responsive for larger screens ——*/
-@media (min-width: 768px) {
+/*—— Responsive Fixes ——*/
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .logo {
-    text-align: left;
+    text-align: center;
     flex: 0 0 auto;
-    margin-bottom: 0;
   }
 
   .nav-links {
-    justify-content: flex-end;
-    flex: 1 1 auto;
+    justify-content: center;
+    width: 100%;
   }
 
   .nav-links button {
-    flex: 0 0 auto;
-    min-width: auto;
+    flex: 1 1 40%;
+    max-width: 100%;
+    font-size: 0.9rem;
   }
 }
