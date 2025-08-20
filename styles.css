@@ -148,6 +148,7 @@ section.active {
   justify-content: center;
   opacity: 0;
   pointer-events: none;
+  z-index: 200;
   transition: opacity 0.3s;
 }
 
@@ -187,6 +188,7 @@ section.active {
   border-radius: 4px;
   margin-bottom: 1rem;
 }
+
 
 /*—— Ebook List ——*/
 #ebooks .ebook-list {
@@ -301,3 +303,4 @@ section.active {
     padding: 1rem;
   }
 }
+
