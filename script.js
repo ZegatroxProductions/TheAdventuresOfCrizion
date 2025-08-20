@@ -83,3 +83,24 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     window.open(`ebook-${bookId}.html`, '_blank');
   });
 });
+const body = document.body;
+document.querySelector('.modal-close').addEventListener('click', () => {
+  modal.classList.remove('open');
+  body.style.overflow = 'auto';
+});
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    const data = characters.find(c => c.id === card.dataset.id);
+    if (!data) return;
+    document.getElementById('m-name').textContent = data.name;
+    document.getElementById('m-img').src = data.img;
+    document.getElementById('m-species').textContent = data.species;
+    document.getElementById('m-gender').textContent = data.gender;
+    document.getElementById('m-age').textContent = data.age;
+    document.getElementById('m-role').textContent = data.role;
+    document.getElementById('m-bday').textContent = data.bday;
+    modal.classList.add('open');
+    body.style.overflow = 'hidden'; // disables scrolling
+  });
+});
+
