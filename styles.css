@@ -168,6 +168,9 @@ section.active {
   position: relative;
   transform: translateY(-20px);
   transition: transform 0.3s;
+  max-height: 80vh;
+  overflow-y: auto;
+
 }
 
 .modal.open .modal-content {
@@ -320,6 +323,7 @@ body {
     padding: 1rem;
   }
 }
+
 
 
 
