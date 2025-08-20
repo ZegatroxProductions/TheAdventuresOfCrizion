@@ -107,6 +107,7 @@ document.querySelectorAll('.card').forEach(card => {
     body.style.overflow = 'hidden'; // disables scrolling
   });
 });
+ 
 
 
 
