@@ -40,7 +40,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   padding: 1rem;
 }
 
@@ -49,12 +48,9 @@ nav {
   font-weight: 800;
 }
 
-/* Top nav buttons */
 .nav-links {
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-end;
 }
 
 .nav-links button {
@@ -66,8 +62,6 @@ nav {
   color: var(--white);
   cursor: pointer;
   transition: background 0.3s;
-  border-radius: 4px;
-  white-space: nowrap;
 }
 
 .nav-links button::after {
@@ -253,8 +247,6 @@ section.active {
   border-radius: 4px;
   cursor: pointer;
 }
-
-/*—— Fancy Buttons ——*/
 .fancy-btn {
   position: relative;
   background: transparent;
@@ -272,27 +264,22 @@ section.active {
   color: #000;
 }
 
-/*—— Responsive ONLY for nav ——*/
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
+/*—— Responsive ——*/
+@media (max-width: 600px) {
+  nav .logo {
+    font-size: 1.2rem;
 
-  .logo {
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
 
-  .nav-links {
-    justify-content: center;
-    width: 100%;
-    gap: 0.5rem;
+
+
   }
 
   .nav-links button {
-    flex: 1 1 40%;
-    min-width: 120px;
+    padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
   }
 }
