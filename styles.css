@@ -266,20 +266,24 @@ section.active {
 
 /*—— Responsive ——*/
 @media (max-width: 600px) {
-  nav .logo {
-    font-size: 1.2rem;
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 
-
-
-
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
   }
 
   .nav-links button {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-
-  .modal-content {
-    padding: 1rem;
+    flex: 1 1 calc(50% - 1rem);
+    min-width: 120px;
+    text-align: center;
   }
 }
+
+
