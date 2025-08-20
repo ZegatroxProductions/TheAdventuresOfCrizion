@@ -34,6 +34,7 @@ const characters = [
     role: 'Hero',
     bday: 'October 21st',
     bio: ' Crazytree (also known by Fern) is a clueless Zuku that never knows what’s going on.'
+  },
 ];
 
 const modal = document.getElementById('modal');
@@ -87,6 +88,7 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     window.open(`ebook-${bookId}.html`, '_blank');
   });
 });
+
 
 
 
