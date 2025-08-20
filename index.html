@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crizion Chronicles</title>
+  <link rel="icon" href="https://i.imgur.com/stwvD2y.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER/NAV -->
+  <header>
+    <nav>
+      <div class="logo">Crizion Chronicles</div>
+      <div class="nav-links">
+        <button data-target="characters" class="active">Characters</button>
+        <button data-target="ebooks">E-Books</button>
+        <button data-target="story">Story</button>
+        <button data-target="fanart">Fanart</button>
+        <button data-target="species">Species</button>
+        <button data-target="roles">Roles</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- CHARACTERS SECTION -->
+    <section id="characters" class="active">
+      <h1>Meet the Characters</h1>
+      <div class="grid">
+        <div class="card" data-id="character1">
+          <img src="https://i.imgur.com/Crizion.png" alt="Crizion">
+          <h3>Crizion</h3>
+        </div>
+        <div class="card" data-id="character2">
+          <img src="https://i.imgur.com/Crazytree.png" alt="Crazytree">
+          <h3>Crazytree</h3>
+        </div>
+        <!-- Add more character cards -->
+      </div>
+    </section>
+
+    <!-- EBOOKS SECTION -->
+    <section id="ebooks">
+      <h1>Upcoming E-Books</h1>
+      <ul class="ebook-list">
+        <li>
+          <h4>The Rift of Realms</h4>
+          <p>A sudden glitch in reality brings six unlikely allies together...</p>
+          <a href="ebook.html" target="_blank" class="read-btn">Read Preview</a>
+        </li>
+        <li>
+          <h4>Shadows Over Virelia</h4>
+          <p>Captain Thorne’s hunt for revenge leads her into the floating city’s darkest secrets...</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section id="story">
+      <h1>Short Story Preview</h1>
+      <div class="page" data-page="1">
+        <p>Nyra Vex stared at the crackling console. “The code… it’s alive,” she whispered...</p>
+        <div class="pager">
+          <button disabled>← Prev</button>
+          <button data-next>Next →</button>
+        </div>
+      </div>
+      <div class="page" data-page="2" style="display:none;">
+        <p>When the portal flared open, Luma’s voice echoed across the lab: “Hope and despair weave the same thread.”</p>
+        <div class="pager">
+          <button data-prev>← Prev</button>
+          <button>Done</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FANART -->
+    <section id="fanart">
+      <h1>Fanart Gallery</h1>
+      <p>Tag me on social and your piece could be featured here!</p>
+    </section>
+
+    <!-- SPECIES -->
+    <section id="species">
+      <h1>Species</h1>
+      <p>From techno-spirits to sky-pirates, discover the creatures that roam Crizion’s world.</p>
+    </section>
+
+    <!-- ROLES -->
+    <section id="roles">
+      <h1>Roles</h1>
+      <p>Learn how each character shapes the story.</p>
+    </section>
+  </main>
+
+  <!-- CHARACTER MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h2 id="m-name"></h2>
+      <img id="m-img" src="" alt="" />
+      <p><strong>Species:</strong> <span id="m-species"></span></p>
+      <p><strong>Gender:</strong> <span id="m-gender"></span></p>
+      <p><strong>Age:</strong> <span id="m-age"></span></p>
+      <p><strong>Role:</strong> <span id="m-role"></span></p>
+      <p><strong>Birthday:</strong> <span id="m-bday"></span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
