@@ -1,9 +1,9 @@
 /*—— Vars & Reset ——*/
 :root {
-  --gradient: linear-gradient(120deg, #e63946, #2a9d8f);
+  --gradient: linear-gradient(120deg, #78991D, #900103);
   --card-bg: rgba(0, 0, 0, 0.75);
   --modal-bg: rgba(0, 0, 0, 0.85);
-  --accent: #f4a261;
+  --accent: #7C675F;
   --white: #fff;
 }
 
@@ -320,6 +320,7 @@ body {
     padding: 1rem;
   }
 }
+
 
 
 
