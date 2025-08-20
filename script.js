@@ -16,12 +16,12 @@ const characters = [
   {
     id: 'character1',
     name: 'Crizion',
-    img: 'https://i.imgur.com/Crizion.png',
-    species: 'Code-Bound Human',
-    gender: 'Non-binary',
-    age: '24',
-    role: 'Rogue Technomancer',
-    bday: 'March 8'
+    img: 'https://i.imgur.com/v8SJNky.png',
+    species: 'Reptilian',
+    gender: 'Male♂️',
+    age: '18',
+    role: 'Hero',
+    bday: 'September 8th'
   },
   {
     id: 'character2',
@@ -103,4 +103,5 @@ document.querySelectorAll('.card').forEach(card => {
     body.style.overflow = 'hidden'; // disables scrolling
   });
 });
+
 
