@@ -22,7 +22,6 @@ const characters = [
     age: '18',
     role: 'Hero',
     bday: 'September 8th',
-    bio: 'Stuff',
   },
   {
     id: 'character2',
@@ -33,7 +32,6 @@ const characters = [
     age: '29',
     role: 'Captain of the Horizon Wraith',
     bday: 'July 19',
-    bio: 'Stuff',
   }
   // Add more characters...
 ];
@@ -52,7 +50,6 @@ document.querySelectorAll('.card').forEach(card => {
     document.getElementById('m-age').textContent = data.age;
     document.getElementById('m-role').textContent = data.role;
     document.getElementById('m-bday').textContent = data.bday;
-    document.getElementById('m-bio').textContent = data.bio;
 
     modal.classList.add('open');
   });
@@ -102,11 +99,11 @@ document.querySelectorAll('.card').forEach(card => {
     document.getElementById('m-age').textContent = data.age;
     document.getElementById('m-role').textContent = data.role;
     document.getElementById('m-bday').textContent = data.bday;
-    document.getElementById('m-bio').textContent = data.bio;
     modal.classList.add('open');
     body.style.overflow = 'hidden'; // disables scrolling
   });
 });
+
 
 
 
