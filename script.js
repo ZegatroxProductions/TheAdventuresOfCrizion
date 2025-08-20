@@ -21,8 +21,8 @@ const characters = [
     gender: 'Male♂️',
     age: '18',
     role: 'Hero',
-    bday: 'September 8th'
-    bio: 'Stuff'
+    bday: 'September 8th',
+    bio: 'Stuff',
   },
   {
     id: 'character2',
@@ -32,8 +32,8 @@ const characters = [
     gender: 'Female',
     age: '29',
     role: 'Captain of the Horizon Wraith',
-    bday: 'July 19'
-    bio: 'Stuff'
+    bday: 'July 19',
+    bio: 'Stuff',
   }
   // Add more characters...
 ];
@@ -107,6 +107,7 @@ document.querySelectorAll('.card').forEach(card => {
     body.style.overflow = 'hidden'; // disables scrolling
   });
 });
+
 
 
 
