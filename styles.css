@@ -271,6 +271,24 @@ section.active {
   color: #000;
 }
 
+.ebook-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Adds spacing between stories */
+}
+
+.ebook-list img {
+  max-width: 300px;
+  max-height: 900px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
 /*—— Responsive ——*/
 @media (max-width: 600px) {
   header {
@@ -322,12 +340,12 @@ body {
   .modal-content {
     padding: 1rem;
   }
+
+  .ebook-list img {
+    max-width: 100%;
+    height: auto;
+  }
 }
-
-
-
-
-
 
 
 
