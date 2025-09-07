@@ -696,7 +696,7 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     window.open(`ebook-${bookId}.html`, '_blank');
   });
 // ==== SPECIES AND ROLES: OPEN NEW TAB ====  
-document.querySelectorAll('.view-details-btn').forEach(btn => {
+document.querySelectorAll('.fancy-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const targetId = btn.dataset.character;
     const data = characters.find(c => c.id === targetId);
@@ -728,6 +728,7 @@ window.addEventListener('scroll', () => {
   }
   });
 });
+
 
 
 
