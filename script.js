@@ -659,7 +659,40 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     const bookId = btn.dataset.book;
     window.open(`ebook-${bookId}.html`, '_blank');
   });
+  
+  function renderCharacter(char) {
+  const container = document.createElement('div');
+  container.className = 'character-card';
+
+  // Name + Sound Button
+  const nameWrapper = document.createElement('div');
+  nameWrapper.className = 'name-wrapper';
+
+  const nameSpan = document.createElement('span');
+  nameSpan.className = 'character-name';
+  nameSpan.textContent = char.name;
+
+  const soundButton = document.createElement('button');
+  soundButton.className = 'sound-button';
+  soundButton.textContent = '🔊';
+  soundButton.setAttribute('aria-label', `Play ${char.name}'s voice`);
+  soundButton.onclick = () => playSound(`assets/sounds/${char.name.toLowerCase()}.m4a`);
+
+  nameWrapper.appendChild(nameSpan);
+  nameWrapper.appendChild(soundButton);
+  container.appendChild(nameWrapper);
+
+  // You can add image, bio, etc. here too
+  document.getElementById('character-grid').appendChild(container);
+}
+
+function playSound(src) {
+  const audio = new Audio(src);
+  audio.play();
+}
+
 });
+
 
 
 
