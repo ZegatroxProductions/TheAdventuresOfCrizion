@@ -650,6 +650,8 @@ function playSound(src) {
   audio.play();
 }
   
+document.getElementById('m-sound').onclick = () => playSound(`assets/sounds/${character.sound}`);
+  
   // attach open handlers
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
@@ -691,6 +693,7 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     window.open(`ebook-${bookId}.html`, '_blank');
   });
 });
+
 
 
 
