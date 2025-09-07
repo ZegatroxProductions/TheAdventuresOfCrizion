@@ -536,7 +536,6 @@ section.active {
 
 /*—— PHONE CODE DO NOT TYPE BELOW IF APPLIED TO ALL DEVICES ——*/
 @media (max-width: 600px) {
-  /* Global mobile reset */
   html, body {
     margin: 0;
     padding: 0;
@@ -549,39 +548,7 @@ section.active {
     box-sizing: inherit;
   }
 
-  /* Header and Navigation */
-  header {
-    padding: 0.5rem 1rem;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .logo {
-    font-size: 1.3rem;
-    text-align: center;
-    width: 100%;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 0.5rem;
-  }
-
-  .nav-links button {
-    flex: 1 1 calc(50% - 1rem);
-    min-width: 120px;
-    font-size: 0.95rem;
-    padding: 0.6rem 1rem;
-    text-align: center;
-  }
-
-  /* Species Section Fixes */
+  /* Species Section */
   .species-grid {
     display: flex;
     flex-direction: column;
@@ -593,10 +560,13 @@ section.active {
 
   .species-card {
     width: 100%;
-    background-color: #4B2E1E; /* Rich brown */
-    color: #4B2E1E;
+    max-width: 100%;
+    background-color: #000000;
+    color: #fff;
     padding: 1rem;
     border-radius: 8px;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .species-card img {
@@ -630,23 +600,7 @@ section.active {
     margin-top: 0.5rem;
   }
 
-  /* Modal Fixes */
-  .modal {
-    width: 100vw !important;
-    height: 100vh !important;
-    top: 0 !important;
-    left: 0 !important;
-    position: fixed !important;
-    z-index: 9999 !important;
-    overflow-x: hidden;
-  }
-
-  .modal-content {
-    padding: 1rem;
-    max-width: 100%;
-  }
-
-  /* Ebooks Section Fixes */
+  /* Ebooks Section */
   #ebooks {
     padding: 1rem;
     overflow-x: hidden;
@@ -663,19 +617,37 @@ section.active {
   }
 
   .ebook-list li {
-    background-color: #4B2E1E; /* Rich brown */
+    background-color: #4B2E1E;
     color: #fff;
     padding: 1rem;
     border-radius: 8px;
     width: 100%;
+    max-width: 100%;
     overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .ebook-list img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     display: block;
     margin-bottom: 0.5rem;
+  }
+
+  /* Modal Fixes */
+  .modal {
+    width: 100vw !important;
+    height: 100vh !important;
+    top: 0 !important;
+    left: 0 !important;
+    position: fixed !important;
+    z-index: 9999 !important;
+    overflow-x: hidden;
+  }
+
+  .modal-content {
+    padding: 1rem;
+    max-width: 100%;
   }
 
   /* Top Bar */
@@ -691,6 +663,7 @@ section.active {
     transform: translateY(-100%);
   }
 }
+
 
 
 
