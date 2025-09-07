@@ -695,7 +695,33 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     const bookId = btn.dataset.book;
     window.open(`ebook-${bookId}.html`, '_blank');
   });
+  
+// === SCROLL FUNCTION FOR MOBILE ===
+function updateBarVisibility() {
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY <= 0) {
+    topBar.classList.remove('hide-bar'); // Always show at top
+  } else if (currentScrollY > lastScrollY) {
+    // Scrolling down
+    topBar.classList.add('hide-bar');
+  } else if (lastScrollY - currentScrollY > threshold) {
+    // Scrolling up by threshold
+    topBar.classList.remove('hide-bar');
+  }
+
+  lastScrollY = currentScrollY;
+  ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    window.requestAnimationFrame(updateBarVisibility);
+    ticking = true;
+  }
+  });
 });
+
 
 
 
