@@ -401,7 +401,7 @@ const characters = [
   id: 'character33',
   name: 'Farago',
   sound: 'farago.m4a',
-  img: 'https://i.imgur.com/YKJM3bh.png',
+  img: 'https://i.imgur.com/UzfXJHw.png',
   species: 'Crystal',
   gender: 'Female♀️',
   age: '16',
@@ -437,7 +437,7 @@ const characters = [
   id: 'character36',
   name: 'Gemeina',
   sound: 'gemeina.m4a',
-  img: 'https://i.imgur.com/bEG2obJ.png',
+  img: 'https://i.imgur.com/FasZOJE.png',
   species: 'Crystal',
   gender: 'Female♀️',
   age: '38',
@@ -792,3 +792,4 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
+
