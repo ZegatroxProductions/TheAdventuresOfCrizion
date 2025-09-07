@@ -658,6 +658,8 @@ section.active {
   #ebooks {
     padding: 1rem;
     overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   .ebook-list {
@@ -673,12 +675,13 @@ section.active {
   .ebook-list li {
     background-color: #000; /* Black background */
     color: #fff;
-    padding: 0.75rem;
+    padding: 1rem;
     border-radius: 8px;
     width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
     word-break: break-word;
-    font-size: 0.95rem;
+    overflow-wrap: break-word;
   }
 
   .ebook-list h4 {
@@ -700,7 +703,7 @@ section.active {
   }
 
   .ebook-list .fancy-btn {
-    background-color: #2e2e2e; /* Dark grey */
+    background-color: #2e2e2e; /* Dark grey button */
     color: #fff;
     border: none;
     padding: 0.6rem 1rem;
@@ -724,6 +727,7 @@ section.active {
     transform: translateY(-100%);
   }
 }
+
 
 
 
