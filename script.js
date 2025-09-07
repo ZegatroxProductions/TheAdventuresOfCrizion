@@ -695,12 +695,27 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     const bookId = btn.dataset.book;
     window.open(`ebook-${bookId}.html`, '_blank');
   });
-// ==== SPECIES AND ROLES: OPEN NEW TAB ====  
-document.querySelectorAll('.fancy-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const targetId = btn.dataset.character;
-    const data = characters.find(c => c.id === targetId);
-    if (data) openModal(data);
+// === SPECIES: Toggle More Info ===
+document.querySelectorAll('#species .fancy-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.species-card');
+    const info = card.querySelector('.more-info');
+    if (info) {
+      info.classList.toggle('hidden');
+      button.textContent = info.classList.contains('hidden') ? 'View Description' : 'Hide Description';
+    }
+  });
+});
+
+// === ROLES: Toggle Lore ===
+document.querySelectorAll('#roles .toggle-lore').forEach(button => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.role-card');
+    const lore = card.querySelector('.role-lore');
+    if (lore) {
+      lore.classList.toggle('hidden');
+      button.textContent = lore.classList.contains('hidden') ? 'View Details' : 'Hide Details';
+    }
   });
 });
 // === SCROLL FUNCTION FOR MOBILE ===
@@ -728,6 +743,7 @@ window.addEventListener('scroll', () => {
   }
   });
 });
+
 
 
 
