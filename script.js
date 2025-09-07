@@ -667,29 +667,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // === SPECIES: Toggle More Info ===
-  document.querySelectorAll('#species .fancy-btn').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.species-card');
-      const info = card.querySelector('.more-info');
-      if (info) {
-        info.classList.toggle('hidden');
-        button.textContent = info.classList.contains('hidden') ? 'View Description' : 'Hide Description';
-      }
-    });
+document.querySelectorAll('.species-card .fancy-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const info = button.parentElement.querySelector('.more-info');
+    if (info) {
+      info.classList.toggle('hidden');
+      button.textContent = info.classList.contains('hidden') ? 'View Description' : 'Hide Description';
+    }
   });
+});
 
-  // === ROLES: Toggle Lore ===
-  document.querySelectorAll('#roles .toggle-lore').forEach(button => {
-    button.addEventListener('click', () => {
-      const card = button.closest('.role-card');
-      const lore = card.querySelector('.role-lore');
-      if (lore) {
-        lore.classList.toggle('hidden');
-        button.textContent = lore.classList.contains('hidden') ? 'View Details' : 'Hide Details';
-      }
-    });
+// === ROLES: Toggle Lore ===
+document.querySelectorAll('.role-card .toggle-lore').forEach(button => {
+  button.addEventListener('click', () => {
+    const lore = button.parentElement.querySelector('.role-lore');
+    if (lore) {
+      lore.classList.toggle('hidden');
+      button.textContent = lore.classList.contains('hidden') ? 'View Details' : 'Hide Details';
+    }
   });
-
+});
+  
   // === EBOOK VIEWER: OPEN NEW TAB ===
   document.querySelectorAll('.read-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -743,6 +741,7 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
+
 
 
 
