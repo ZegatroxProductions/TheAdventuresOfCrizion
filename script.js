@@ -695,7 +695,14 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     const bookId = btn.dataset.book;
     window.open(`ebook-${bookId}.html`, '_blank');
   });
-  
+// ==== SPECIES AND ROLES: OPEN NEW TAB ====  
+document.querySelectorAll('.view-details-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const targetId = btn.dataset.character;
+    const data = characters.find(c => c.id === targetId);
+    if (data) openModal(data);
+  });
+});
 // === SCROLL FUNCTION FOR MOBILE ===
 function updateBarVisibility() {
   const currentScrollY = window.scrollY;
@@ -721,6 +728,7 @@ window.addEventListener('scroll', () => {
   }
   });
 });
+
 
 
 
