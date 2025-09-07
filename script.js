@@ -16,7 +16,7 @@ const characters = [
   {
     id: 'character1',
     name: 'Crizion',
-    sound: 'crizion.m4a'
+    sound: 'crizion.m4a',
     img: 'https://i.imgur.com/v8SJNky.png',
     species: 'Reptilian',
     gender: 'Male♂️',
@@ -692,6 +692,7 @@ function playSound(src) {
 }
 
 });
+
 
 
 
