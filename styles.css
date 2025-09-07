@@ -31,8 +31,9 @@ header {
   position: sticky;
   top: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
+  z-index: 1000; /* fine to keep this high, just less than modal */
 }
+
 
 nav {
   max-width: 1200px;
@@ -149,8 +150,9 @@ section.active {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s;
-  z-index: 9999;
+  z-index: 9999; /* very high to sit above everything */
 }
+
 
 .modal.open {
   opacity: 1;
@@ -168,6 +170,7 @@ section.active {
   transition: transform 0.3s;
   max-height: 80vh;
   overflow-y: auto;
+
 }
 
 .modal.open .modal-content {
@@ -191,24 +194,28 @@ section.active {
   margin-bottom: 1rem;
 }
 
+
 /*—— Ebook List ——*/
 #ebooks .ebook-list {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
 }
 
 #ebooks li {
-  display: block;
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
   background: var(--card-bg);
+  padding: 1rem;
   border-radius: 8px;
-  max-width: 1000px;
-  margin: 0 auto;
+  text-align: center;
+}
+
+#ebooks img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 4px;
 }
 
 #ebooks h4 {
@@ -216,15 +223,7 @@ section.active {
   font-weight: 600;
 }
 
-#ebooks img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.read-btn,
-.fancy-btn {
+.read-btn {
   display: inline-block;
   margin-top: 0.75rem;
   background: var(--accent);
@@ -232,9 +231,6 @@ section.active {
   padding: 0.5rem 1rem;
   border-radius: 4px;
   text-decoration: none;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
 }
 
 /*—— Story Section ——*/
@@ -282,7 +278,279 @@ section.active {
   font-size: 1.2em;
 }
 
-/*—— Responsive ——*/
+.fancy-btn {
+  background: transparent;
+  border: 2px solid #8C8C8C; /* Rich brown */
+  color: #fff; /* White text always */
+  padding: 0.6rem 1.2rem;
+  border-radius: 0; /* Sharp corners */
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.fancy-btn:hover {
+  background: #636363;
+  color: #fff;
+}
+
+.ebook-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Adds spacing between stories */
+}
+
+.ebook-list img {
+  max-width: 1000px;
+  max-height: 1500px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/*—— Species ——*/
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.species-card {
+  background: #1e1e1e;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.species-card:hover {
+  transform: scale(1.03);
+}
+
+.species-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.species-card.blank {
+  background: #2a2a2a;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.6;
+}
+.more-info {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #444;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Roles Grid */
+.roles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Role Card */
+.role-card {
+  background-color: #1a1a1a;
+  border: 2px solid #00ffff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* Role Logo */
+.role-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px #00ffff);
+}
+
+/* Role Name */
+.role-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Lore Panel */
+.role-lore {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #111;
+  border-radius: 12px;
+  border: 1px solid #00ffff;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.role-lore.hidden {
+  display: none;
+}
+
+/* Role 1 */
+.role-1 {
+  background-color: #4BC21C;
+  border: 2px solid #55E21D;
+  box-shadow: 0 0 12px #55E21D;
+}
+.role-1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #4BC21C;
+}
+
+/* Role 2 */
+.role-2 {
+  background-color: #18A9AF;
+  border: 2px solid #1CCBD2;
+  box-shadow: 0 0 12px #1CCBD2;
+}
+.role-2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #18A9AF;
+}
+
+/* Role 3 */
+.role-3 {
+  background-color: #7C7D59;
+  border: 2px solid #B7B981;
+  box-shadow: 0 0 12px #B7B981;
+}
+.role-3:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #7C7D59;
+}
+
+/* Role 4 */
+.role-4 {
+  background-color: #838383;
+  border: 2px solid #B9B9B6;
+  box-shadow: 0 0 12px #B9B9B6;
+}
+.role-4:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #838383;
+}
+
+/* Role 5 */
+.role-5 {
+  background-color: #4D607F;
+  border: 2px solid #6883B3;
+  box-shadow: 0 0 12px #6883B3;
+}
+.role-5:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #4D607F;
+}
+
+/* Role 6 */
+.role-6 {
+  background-color: #AF6B05;
+  border: 2px solid #E78C04;
+  box-shadow: 0 0 12px #E78C04;
+}
+.role-6:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #AF6B05;
+}
+
+/* Role 7 */
+.role-7 {
+  background-color: #780001;
+  border: 2px solid #BA0103;
+  box-shadow: 0 0 12px #BA0103;
+}
+.role-7:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #780001;
+}
+
+/* Role 1 */
+.role-1 .role-lore {
+  background-color: #4BC21C;
+  border: 2px solid #55E21D;
+  box-shadow: 0 0 12px #55E21D;
+}
+
+/* Role 2 */
+.role-2 .role-lore {
+  background-color: #18A9AF;
+  border: 2px solid #1CCBD2;
+  box-shadow: 0 0 12px #1CCBD2;
+}
+
+/* Role 3 */
+.role-3 .role-lore {
+  background-color: #7C7D59;
+  border: 2px solid #B7B981;
+  box-shadow: 0 0 12px #B7B981;
+}
+
+/* Role 4 */
+.role-4 .role-lore {
+  background-color: #838383;
+  border: 2px solid #B9B9B6;
+  box-shadow: 0 0 12px #B9B9B6;
+}
+
+/* Role 5 */
+.role-5 .role-lore {
+  background-color: #4D607F;
+  border: 2px solid #6883B3;
+  box-shadow: 0 0 12px #6883B3;
+}
+
+/* Role 6 */
+.role-6 .role-lore {
+  background-color: #AF6B05;
+  border: 2px solid #E78C04;
+  box-shadow: 0 0 12px #E78C04;
+}
+
+/* Role 7 */
+.role-7 .role-lore {
+  background-color: #780001;
+  border: 2px solid #BA0103;
+  box-shadow: 0 0 12px #BA0103;
+}
+
+.name-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.character-name {
+  font-weight: bold;
+}
+.sound-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/*—— PHONE CODE DO NOT TYPE BELOW IF APPLIED TO ALL DEVICES ——*/
 @media (max-width: 600px) {
   header {
     padding: 0.5rem 1rem;
@@ -293,13 +561,13 @@ section.active {
     align-items: center;
     gap: 0.75rem;
   }
-
-  body {
+  
+body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
-
+  
   .logo {
     font-size: 1.3rem;
     text-align: center;
@@ -312,7 +580,7 @@ section.active {
     width: 100%;
     gap: 0.5rem;
   }
-
+  
   .modal {
     width: 100vw !important;
     height: 100vh !important;
@@ -323,7 +591,7 @@ section.active {
   }
 
   .nav-links button {
-    flex: 1 1 calc(50% - 1rem);
+    flex: 1 1 calc(50% - 1rem); /* 2 buttons per row */
     min-width: 120px;
     padding: 0.6rem 1rem;
     font-size: 0.95rem;
@@ -334,9 +602,19 @@ section.active {
     padding: 1rem;
   }
 
-  #ebooks img {
+  .ebook-list img {
     max-width: 100%;
     height: auto;
   }
+#topBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease;
+  z-index: 1000;
 }
 
+.hide-bar {
+  transform: translateY(-100%);
+}
+}
