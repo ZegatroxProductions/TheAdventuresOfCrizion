@@ -303,21 +303,25 @@
   </main>
 
   <!-- CHARACTER MODAL -->
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <button class="modal-close" aria-label="Close">×</button>
-      <div class="name-sound-wrapper">
-  	<h2 id="m-name"></h2>
-  	<button id="m-sound" class="fancy-button" aria-label="Play voice">🔊</button>
-	</div>
-      <img id="m-img" src="" alt="" />
-      <p><strong>Species:</strong> <span id="m-species"></span></p>
-      <p><strong>Gender:</strong> <span id="m-gender"></span></p>
-      <p><strong>Age:</strong> <span id="m-age"></span></p>
-      <p><strong>Role:</strong> <span id="m-role"></span></p>
-      <p><strong>Birthday:</strong> <span id="m-bday"></span></p>
-      <p><strong>Description:</strong> <span id="m-bio"></span></p>
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Close">×</button>
+
+    <!-- Name + Sound Button -->
+    <div class="name-sound-wrapper">
+      <h2 id="m-name"></h2>
+      <button id="m-sound" class="fancy-button" aria-label="Play voice">🔊</button>
+    </div>
+
+    <!-- Character Image -->
+    <img id="m-img" src="" alt="" />
+
+    <!-- Character Info -->
+    <p><strong>Species:</strong> <span id="m-species"></span></p>
+    <p><strong>Gender:</strong> <span id="m-gender"></span></p>
+    <p><strong>Age:</strong> <span id="m-age"></span></p>
+    <p><strong>Role:</strong> <span id="m-role"></span></p>
+    <p><strong>Birthday:</strong> <span id="m-bday"></span></p>
+    <p><strong>Description:</strong> <span id="m-bio"></span></p>
   </div>
-  <script src="script.js"></script>
-</body>
-</html>
+</div>
