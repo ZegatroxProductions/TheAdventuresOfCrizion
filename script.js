@@ -28,6 +28,7 @@ const characters = [
   {
     id: 'character2',
     name: 'Crazytree',
+    sound: 'crazytree.m4a',
     img: 'https://i.imgur.com/p27rtqw.jpeg',
     species: 'Zuku',
     gender: 'Male♂️',
@@ -39,6 +40,7 @@ const characters = [
   {
     id: 'character3',
     name: 'Bulletblade',
+    sound: 'bulletblade.m4a',
     img: 'https://i.imgur.com/KZxuJBd.jpeg',
     species: 'Shadefolk',
     gender: 'Male♂️',
@@ -50,6 +52,7 @@ const characters = [
   {
     id: 'character4',
     name: 'Izzy',
+    sound: 'izzy.m4a',
     img: 'https://i.imgur.com/TMUr6pK.jpeg',
     species: 'Centipedra',
     gender: 'Female♀️',
@@ -61,6 +64,7 @@ const characters = [
   {
     id: 'character5',
     name: 'Tkaragem',
+    sound: 'tkaragem.m4a',
     img: 'https://i.imgur.com/fbm67rC.jpeg',
     species: 'Crystal',
     gender: 'Male♂️',
@@ -72,6 +76,7 @@ const characters = [
   {
     id: 'character6',
     name: 'Anya',
+    sound: 'anya.m4a',
     img: 'https://i.imgur.com/HUn3TUo.jpeg',
     species: 'Frost',
     gender: 'Female♀️',
@@ -83,6 +88,7 @@ const characters = [
   {
     id: 'character7',
     name: 'Axol',
+    sound: 'axol.m4a',
     img: 'https://i.imgur.com/mFFGg84.png',
     species: 'Dragon',
     gender: 'Male♂️',
@@ -94,6 +100,7 @@ const characters = [
   {
     id: 'character8',
     name: 'Pelestia',
+    sound: 'pelestia.m4a',
     img: 'https://i.imgur.com/1fMVfc7.png',
     species: 'Guardian',
     gender: 'Female♀️',
@@ -105,6 +112,7 @@ const characters = [
 {
   id: 'character9',
   name: 'Vester',
+  sound: 'vester.m4a',
   img: 'https://i.imgur.com/wvIga9k.png',
   species: 'Reptilian',
   gender: 'Male♂️',
@@ -116,6 +124,7 @@ const characters = [
 {
   id: 'character10',
   name: 'Abigail',
+  sound: 'abigail.m4a',
   img: 'https://i.imgur.com/pTVHt3u.png',
   species: 'Reptilian',
   gender: 'Female♀️',
@@ -127,6 +136,7 @@ const characters = [
 {
   id: 'character11',
   name: 'Linden',
+  sound: 'linden.m4a',
   img: 'https://i.imgur.com/b4WJcLE.png',
   species: 'Reptilian',
   gender: 'Male♂️',
@@ -138,6 +148,7 @@ const characters = [
 {
   id: 'character12',
   name: 'Iris',
+  sound: 'iris.m4a',
   img: 'https://i.imgur.com/oMi1Ggf.png',
   species: 'Reptilian',
   gender: 'Male♂️',
@@ -149,6 +160,7 @@ const characters = [
 {
   id: 'character13',
   name: 'Dave',
+  sound: 'dave.m4a',
   img: 'https://i.imgur.com/8SwOhbE.png',
   species: 'Reptilian',
   gender: 'Male♂️',
@@ -160,6 +172,7 @@ const characters = [
 {
   id: 'character14',
   name: 'Pyrana',
+  sound: 'pyrana.m4a',
   img: 'https://i.imgur.com/enCWeLZ.png',
   species: 'Reptilian',
   gender: 'Female♀️',
@@ -171,6 +184,7 @@ const characters = [
 {
   id: 'character15',
   name: 'Arrowite',
+  sound: 'arrowite.m4a',
   img: 'https://i.imgur.com/Ukq6LwW.png',
   species: 'Zuku',
   gender: 'Male♂️',
@@ -182,6 +196,7 @@ const characters = [
 {
   id: 'character16',
   name: 'Larah',
+  sound: 'larah.m4a',
   img: 'https://i.imgur.com/h3X2btM.png',
   species: 'Zuku',
   gender: 'Female♀️',
@@ -193,6 +208,7 @@ const characters = [
 {
   id: 'character17',
   name: 'Chioka',
+  sound: 'chioka.m4a',
   img: 'https://i.imgur.com/ijiIhXi.png',
   species: 'Zuku',
   gender: 'Female♀️',
@@ -204,6 +220,7 @@ const characters = [
 {
   id: 'character18',
   name: 'Igor',
+  sound: 'igor.m4a',
   img: 'https://i.imgur.com/CHNN3hu.png',
   species: 'Zuku',
   gender: 'Male♂️',
@@ -215,6 +232,7 @@ const characters = [
 {
   id: 'character19',
   name: 'Jyaine',
+  sound: 'jyaine.m4a',
   img: 'https://i.imgur.com/QAViInf.png',
   species: 'Zuku',
   gender: 'Female♀️',
@@ -226,6 +244,7 @@ const characters = [
 {
   id: 'character20',
   name: 'Garvoch',
+  sound: 'garvoch.m4a',
   img: 'https://i.imgur.com/zOu6W2A.png',
   species: 'Shadefolk',
   gender: 'Male♂️',
@@ -237,6 +256,7 @@ const characters = [
 {
   id: 'character21',
   name: 'Wuji',
+  sound: 'wuji.m4a',
   img: 'https://i.imgur.com/NGnAvPG.png',
   species: 'Shadefolk',
   gender: 'Male♂️',
@@ -248,6 +268,7 @@ const characters = [
 {
   id: 'character22',
   name: 'Carpacho',
+  sound: 'carpacho.m4a',
   img: 'https://i.imgur.com/LaqqCUY.png',
   species: 'Shadefolk',
   gender: 'Male♂️',
@@ -259,6 +280,7 @@ const characters = [
 {
   id: 'character23',
   name: 'Yavel',
+  sound: 'yavel.m4a',
   img: 'https://i.imgur.com/8avwaBj.png',
   species: 'Shadefolk',
   gender: 'Female♀️',
@@ -269,7 +291,8 @@ const characters = [
 },
 {
   id: 'character24',
-  name: 'Fartbutt',
+  name: 'Benton',
+  sound: 'benton.m4a',
   img: 'https://i.imgur.com/GeLSkXT.png',
   species: 'Shadefolk',
   gender: 'Male♂️',
@@ -281,6 +304,7 @@ const characters = [
 {
   id: 'character25',
   name: 'Estrailia',
+  sound: 'estrailia.m4a',
   img: 'https://i.imgur.com/xN8DEqT.png',
   species: 'Shadefolk',
   gender: 'Female♀️',
@@ -292,6 +316,7 @@ const characters = [
 {
   id: 'character26',
   name: 'Necros',
+  sound: 'necros.m4a',
   img: 'https://i.imgur.com/7qo9tiS.png',
   species: 'Shadefolk',
   gender: 'Male♂️',
@@ -303,6 +328,7 @@ const characters = [
 {
   id: 'character27',
   name: 'Heveres',
+  sound: 'heveres.m4a',
   img: 'https://i.imgur.com/KyGbpn4.png',
   species: 'Centipedra',
   gender: 'Male♂️',
@@ -314,6 +340,7 @@ const characters = [
 {
   id: 'character28',
   name: 'Lisa',
+  sound: 'lisa.m4a',
   img: 'https://i.imgur.com/Jm05ezz.png',
   species: 'Centipedra',
   gender: 'Female♀️',
@@ -325,6 +352,7 @@ const characters = [
 {
   id: 'character29',
   name: 'Zeeneth',
+  sound: 'zeeneth.m4a',
   img: 'https://i.imgur.com/4UUALxU.png',
   species: 'Centipedra',
   gender: 'Female♀️',
@@ -336,6 +364,7 @@ const characters = [
 {
   id: 'character30',
   name: 'Decratos',
+  sound: 'decratos.m4a',
   img: 'https://i.imgur.com/e6WzD7x.png',
   species: 'Centipedra',
   gender: 'Male♂️',
@@ -347,6 +376,7 @@ const characters = [
 {
   id: 'character31',
   name: 'Ugarness',
+  sound: 'ugarness.m4a',
   img: 'https://i.imgur.com/88HsHTh.png',
   species: 'Centipedra',
   gender: 'Female♀️',
@@ -358,6 +388,7 @@ const characters = [
 {
   id: 'character32',
   name: 'Girade',
+  sound: 'girade.m4a',
   img: 'https://i.imgur.com/BFN7uPf.png',
   species: 'Lizard',
   gender: 'Male♂️',
@@ -369,6 +400,7 @@ const characters = [
 {
   id: 'character33',
   name: 'Farago',
+  sound: 'farago.m4a',
   img: 'https://i.imgur.com/3KtNXQd.png',
   species: 'Crystal',
   gender: 'Female♀️',
@@ -380,6 +412,7 @@ const characters = [
 {
   id: 'character34',
   name: 'Barricrude',
+  sound: 'barricrude.m4a',
   img: 'https://i.imgur.com/MjhzwTx.png',
   species: 'Crystal',
   gender: 'Male♂️',
@@ -391,6 +424,7 @@ const characters = [
 {
   id: 'character35',
   name: 'Takatoka',
+  sound: 'takatoka.m4a',
   img: 'https://i.imgur.com/eKD6PJC.png',
   species: 'Crystal',
   gender: 'Male♂️',
@@ -402,6 +436,7 @@ const characters = [
 {
   id: 'character36',
   name: 'Gemeina',
+  sound: 'gemeina.m4a',
   img: 'https://i.imgur.com/Z7y39Ke.png',
   species: 'Crystal',
   gender: 'Female♀️',
@@ -413,6 +448,7 @@ const characters = [
 {
   id: 'character37',
   name: 'Tupa',
+  sound: 'tupa.m4a',
   img: 'https://i.imgur.com/YrnNC5P.png',
   species: 'Crystal',
   gender: 'Male♂️',
@@ -424,6 +460,7 @@ const characters = [
 {
   id: 'character38',
   name: 'Viviana',
+  sound: 'viviana.m4a',
   img: 'https://i.imgur.com/EGGKu6w.png',
   species: 'Frost',
   gender: 'Female♀️',
@@ -435,6 +472,7 @@ const characters = [
 {
   id: 'character39',
   name: 'Torean',
+  sound: 'torean.m4a',
   img: 'https://i.imgur.com/jxuFZY4.png',
   species: 'Frost',
   gender: 'Male♂️',
@@ -446,6 +484,7 @@ const characters = [
 {
   id: 'character40',
   name: 'Tunundra',
+  sound: 'tunundra.m4a',
   img: 'https://i.imgur.com/HALaUnV.png',
   species: 'Frost',
   gender: 'Male♂️',
@@ -457,6 +496,7 @@ const characters = [
 {
   id: 'character41',
   name: 'Grace',
+  sound: 'grace.m4a',
   img: 'https://i.imgur.com/12Xuxp5.png',
   species: 'Frost',
   gender: 'Female♀️',
@@ -468,6 +508,7 @@ const characters = [
 {
   id: 'character42',
   name: 'Ludicrous',
+  sound: 'ludicrous.m4a',
   img: 'https://i.imgur.com/Omt9AZa.png',
   species: 'Frost/Monster',
   gender: 'Male♂️',
@@ -479,6 +520,7 @@ const characters = [
 {
   id: 'character43',
   name: 'Blendice',
+  sound: 'blendice.m4a',
   img: 'https://i.imgur.com/eTyJErw.png',
   species: '???',
   gender: 'Male♂️',
@@ -490,6 +532,7 @@ const characters = [
 {
   id: 'character44',
   name: 'Razorox',
+  sound: 'razorox.m4a',
   img: 'https://i.imgur.com/6plOhFS.png',
   species: 'Monster/Dragon',
   gender: 'Male♂️',
@@ -501,6 +544,7 @@ const characters = [
 {
   id: 'character45',
   name: 'Charolette',
+  sound: 'charolette.m4a',
   img: 'https://i.imgur.com/6hAC59F.png',
   species: 'Monster/Spider',
   gender: 'Female♀️',
@@ -512,6 +556,7 @@ const characters = [
 {
   id: 'character46',
   name: 'Sourczess',
+  sound: 'sourczess.m4a',
   img: 'https://i.imgur.com/FCV0hPv.png',
   species: '???',
   gender: 'Male♂️',
@@ -523,6 +568,7 @@ const characters = [
 {
   id: 'character47',
   name: 'Blaze',
+  sound: 'blaze.m4a',
   img: 'https://i.imgur.com/V3YvrBb.png',
   species: 'Monster',
   gender: 'Male♂️',
@@ -534,6 +580,7 @@ const characters = [
 {
   id: 'character48',
   name: 'Cocy',
+  sound: 'cocy.m4a',
   img: 'https://i.imgur.com/wZHS1Hy.png',
   species: 'Monster/Shadefolk',
   gender: 'Female♀️',
@@ -545,6 +592,7 @@ const characters = [
 {
   id: 'character49',
   name: 'Spricados',
+  sound: 'spricados.m4a',
   img: 'https://i.imgur.com/aDMS9iw.png',
   species: 'Spider',
   gender: 'Female♀️',
@@ -556,6 +604,7 @@ const characters = [
 {
   id: 'character50',
   name: 'Epister',
+  sound: 'epister.m4a',
   img: 'https://i.imgur.com/KO31It4.png',
   species: 'Galaxian',
   gender: 'Male♂️',
@@ -567,6 +616,7 @@ const characters = [
 {
   id: 'character51',
   name: 'Metal Master',
+  sound: 'metal master.m4a',
   img: 'https://i.imgur.com/G1xMLk5.png',
   species: 'Metalian',
   gender: 'Male♂️',
@@ -578,6 +628,7 @@ const characters = [
 {
   id: 'character52',
   name: 'Zegatrox',
+  sound: 'zegatrox.m4a',
   img: 'https://i.imgur.com/hYUXGXn.png',
   species: 'DrawnBorn',
   gender: 'Thing',
@@ -741,6 +792,7 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
+
 
 
 
