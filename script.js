@@ -593,22 +593,27 @@ const modal = document.getElementById('modal');
 const body = document.body;
 
 document.addEventListener('DOMContentLoaded', () => {
-  const modal    = document.getElementById('modal');
+  const modal = document.getElementById('modal');
   const closeBtn = modal.querySelector('.modal-close');
-  const body     = document.body;
+  const body = document.body;
 
   function openModal(data) {
-    document.getElementById('m-name').textContent    = data.name;
-    document.getElementById('m-img').src            = data.img;
-    document.getElementById('m-species').textContent= data.species;
+    document.getElementById('m-name').textContent = data.name;
+    document.getElementById('m-img').src = data.img;
+    document.getElementById('m-img').alt = `${data.name}'s portrait`;
+    document.getElementById('m-species').textContent = data.species;
     document.getElementById('m-gender').textContent = data.gender;
-    document.getElementById('m-age').textContent    = data.age;
-    document.getElementById('m-role').textContent   = data.role;
-    document.getElementById('m-bday').textContent   = data.bday;
+    document.getElementById('m-age').textContent = data.age;
+    document.getElementById('m-role').textContent = data.role;
+    document.getElementById('m-bday').textContent = data.bday;
 
     const bioEl = document.getElementById('m-bio');
     bioEl.textContent = data.bio;
     bioEl.style.color = data.id === 'character51' ? 'red' : '';
+
+    // 🔊 Wire up sound button
+    const soundButton = document.getElementById('m-sound');
+    soundButton.onclick = () => playSound(`assets/sounds/${data.sound}`);
 
     modal.classList.add('open');
     body.style.overflow = 'hidden';
@@ -618,45 +623,39 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.remove('open');
     body.style.overflow = '';
   }
-  
+
   function renderCharacter(char) {
-  const container = document.createElement('div');
-  container.className = 'character-card';
+    const container = document.createElement('div');
+    container.className = 'character-card';
 
-  // Name + Sound Button
-  const nameWrapper = document.createElement('div');
-  nameWrapper.className = 'name-wrapper';
+    // Name + Sound Button
+    const nameWrapper = document.createElement('div');
+    nameWrapper.className = 'name-wrapper';
 
-  const nameSpan = document.createElement('span');
-  nameSpan.className = 'character-name';
-  nameSpan.textContent = char.name;
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'character-name';
+    nameSpan.textContent = char.name;
 
-  const soundButton = document.createElement('button');
-  soundButton.className = 'sound-button';
-  soundButton.textContent = '🔊';
-  soundButton.setAttribute('aria-label', `Play ${char.name}'s voice`);
-  soundButton.onclick = () => playSound(`assets/sounds/${char.name.toLowerCase()}.m4a`);
+    const soundButton = document.createElement('button');
+    soundButton.className = 'sound-button';
+    soundButton.textContent = '🔊';
+    soundButton.setAttribute('aria-label', `Play ${char.name}'s voice`);
+    soundButton.onclick = () => playSound(`assets/sounds/${char.name.toLowerCase()}.m4a`);
 
-  nameWrapper.appendChild(nameSpan);
-  nameWrapper.appendChild(soundButton);
-  container.appendChild(nameWrapper);
+    nameWrapper.appendChild(nameSpan);
+    nameWrapper.appendChild(soundButton);
+    container.appendChild(nameWrapper);
 
-  // You can add image, bio, etc. here too
-  document.getElementById('character-grid').appendChild(container);
-}
+    // Add to grid
+    document.getElementById('character-grid').appendChild(container);
+  }
 
-function playSound(src) {
-  const audio = new Audio(src);
-  audio.play();
-}
-  
-document.getElementById('m-sound').onclick = () => playSound(`assets/sounds/${character.sound}`);
+  function playSound(src) {
+    const audio = new Audio(src);
+    audio.play().catch(err => console.error("Audio playback failed:", err));
+  }
 
-function playSound(src) {
-  const audio = new Audio(src);
-  audio.play().catch(err => console.error("Audio playback failed:", err));
-}
-  // attach open handlers
+  // Attach open handlers
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       const data = characters.find(c => c.id === card.dataset.id);
@@ -664,10 +663,10 @@ function playSound(src) {
     });
   });
 
-  // attach close handlers
+  // Attach close handlers
   closeBtn.addEventListener('click', closeModal);
 
-  // click outside modal-content to close
+  // Click outside modal-content to close
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
   });
@@ -697,6 +696,7 @@ document.querySelectorAll('.read-btn').forEach(btn => {
     window.open(`ebook-${bookId}.html`, '_blank');
   });
 });
+
 
 
 
