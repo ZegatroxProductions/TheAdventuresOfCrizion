@@ -198,7 +198,7 @@ section.active {
 /*—— Ebook List ——*/
 #ebooks .ebook-list {
   list-style: none;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
@@ -723,6 +723,7 @@ section.active {
     transform: translateY(-100%);
   }
 }
+
 
 
 
