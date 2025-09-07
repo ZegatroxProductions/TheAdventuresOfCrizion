@@ -611,7 +611,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bioEl.textContent = data.bio;
     bioEl.style.color = data.id === 'character51' ? 'red' : '';
 
-    // 🔊 Wire up sound button
     const soundButton = document.getElementById('m-sound');
     soundButton.onclick = () => playSound(`assets/sounds/${data.sound}`);
 
@@ -628,7 +627,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.createElement('div');
     container.className = 'character-card';
 
-    // Name + Sound Button
     const nameWrapper = document.createElement('div');
     nameWrapper.className = 'name-wrapper';
 
@@ -646,7 +644,6 @@ document.addEventListener('DOMContentLoaded', () => {
     nameWrapper.appendChild(soundButton);
     container.appendChild(nameWrapper);
 
-    // Add to grid
     document.getElementById('character-grid').appendChild(container);
   }
 
@@ -655,7 +652,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.play().catch(err => console.error("Audio playback failed:", err));
   }
 
-  // Attach open handlers
+  // === Attach character modal openers ===
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
       const data = characters.find(c => c.id === card.dataset.id);
@@ -663,12 +660,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Attach close handlers
+  // === Attach modal close handlers ===
   closeBtn.addEventListener('click', closeModal);
-
-  // Click outside modal-content to close
   modal.addEventListener('click', e => {
     if (e.target === modal) closeModal();
+  });
+
+  // === SPECIES: Toggle More Info ===
+  document.querySelectorAll('#species .fancy-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.species-card');
+      const info = card.querySelector('.more-info');
+      if (info) {
+        info.classList.toggle('hidden');
+        button.textContent = info.classList.contains('hidden') ? 'View Description' : 'Hide Description';
+      }
+    });
+  });
+
+  // === ROLES: Toggle Lore ===
+  document.querySelectorAll('#roles .toggle-lore').forEach(button => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.role-card');
+      const lore = card.querySelector('.role-lore');
+      if (lore) {
+        lore.classList.toggle('hidden');
+        button.textContent = lore.classList.contains('hidden') ? 'View Details' : 'Hide Details';
+      }
+    });
+  });
+
+  // === EBOOK VIEWER: OPEN NEW TAB ===
+  document.querySelectorAll('.read-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const bookId = btn.dataset.book;
+      window.open(`ebook-${bookId}.html`, '_blank');
+    });
   });
 });
 
@@ -689,46 +716,20 @@ document.querySelectorAll('#story .pager button').forEach(btn => {
   });
 });
 
-// ==== EBOOK VIEWER: OPEN NEW TAB ====
-document.querySelectorAll('.read-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const bookId = btn.dataset.book;
-    window.open(`ebook-${bookId}.html`, '_blank');
-  });
-// === SPECIES: Toggle More Info ===
-document.querySelectorAll('#species .fancy-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const card = button.closest('.species-card');
-    const info = card.querySelector('.more-info');
-    if (info) {
-      info.classList.toggle('hidden');
-      button.textContent = info.classList.contains('hidden') ? 'View Description' : 'Hide Description';
-    }
-  });
-});
-
-// === ROLES: Toggle Lore ===
-document.querySelectorAll('#roles .toggle-lore').forEach(button => {
-  button.addEventListener('click', () => {
-    const card = button.closest('.role-card');
-    const lore = card.querySelector('.role-lore');
-    if (lore) {
-      lore.classList.toggle('hidden');
-      button.textContent = lore.classList.contains('hidden') ? 'View Details' : 'Hide Details';
-    }
-  });
-});
 // === SCROLL FUNCTION FOR MOBILE ===
+let lastScrollY = window.scrollY;
+let ticking = false;
+const topBar = document.getElementById('topBar');
+const threshold = 50;
+
 function updateBarVisibility() {
   const currentScrollY = window.scrollY;
 
   if (currentScrollY <= 0) {
-    topBar.classList.remove('hide-bar'); // Always show at top
+    topBar.classList.remove('hide-bar');
   } else if (currentScrollY > lastScrollY) {
-    // Scrolling down
     topBar.classList.add('hide-bar');
   } else if (lastScrollY - currentScrollY > threshold) {
-    // Scrolling up by threshold
     topBar.classList.remove('hide-bar');
   }
 
@@ -741,8 +742,8 @@ window.addEventListener('scroll', () => {
     window.requestAnimationFrame(updateBarVisibility);
     ticking = true;
   }
-  });
 });
+
 
 
 
